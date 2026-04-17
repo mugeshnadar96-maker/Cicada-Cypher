@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Product Price Analyzer",
+  "version": "1.0.0",
+  "description": "Extracts product details from e-commerce pages and analyzes pricing via backend API.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Analyze Product Price"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
